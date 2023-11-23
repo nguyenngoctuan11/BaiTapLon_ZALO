@@ -244,7 +244,7 @@ var url = "https://654da848cbc325355741c2bd.mockapi.io/phoneBook";
                             // backgroundColor:'#fff',
                             // alignItems:'center',
                              flex:2,
-                             backgroundColor:'red',
+                             backgroundColor:'white',
 
                         }}>
                             <TouchableOpacity style={{
@@ -274,7 +274,7 @@ var url = "https://654da848cbc325355741c2bd.mockapi.io/phoneBook";
                             </TouchableOpacity>
                         </View>  
                          <View style={{
-                            
+                             flexDirection:'row',
                          }}>
                                <Text style={{
                                 
@@ -283,6 +283,12 @@ var url = "https://654da848cbc325355741c2bd.mockapi.io/phoneBook";
                             }}>
                                  Thích bởi
                             </Text>
+                            <Image style={{
+                                width:20,
+                                height:20,
+                                marginLeft:10,
+                                marginRight:5,
+                            }} source={require('../assets/Avatar.png')}/>
                          </View>
 
                         </View>    

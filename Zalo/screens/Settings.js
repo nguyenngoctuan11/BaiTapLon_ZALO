@@ -7,12 +7,14 @@ import {
     TouchableOpacity,
     StyleSheet,
     FlatList,
+    ScrollView,
    } from 'react-native';
 import { SettingOutlined , UserSwitchOutlined ,CustomerServiceTwoTone , RightOutlined  
-    ,SearchOutlined, LockOutlined ,PieChartOutlined,CloudOutlined ,QrcodeOutlined,AppstoreOutlined,MessageOutlined,ContactsOutlined,UserOutlined,ClockCircleOutlined} from '@ant-design/icons';
+    ,SearchOutlined, LockOutlined ,PieChartOutlined,CloudOutlined ,QrcodeOutlined,AppstoreOutlined,MessageOutlined,
+    ContactsOutlined,UserOutlined,ClockCircleOutlined,PropertySafetyOutlined } from '@ant-design/icons';
 import { AntDesign} from '@expo/vector-icons';
 
-   const information = ({navigation})=>{
+   const Settings = ({navigation})=>{
         return(
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -26,27 +28,28 @@ import { AntDesign} from '@expo/vector-icons';
                     }>
                          <Text style={styles.txtS}>Tìm kiếm</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btnSetting} onPress={()=>navigation.navigate('Settings')}>
+                    <TouchableOpacity style={styles.btnSetting}>
                       <SettingOutlined style={{fontSize:'30px' , color:'#fff'}}/>
                     </TouchableOpacity>
                   </View> 
-                  <View style={styles.group_list}>
+                    <ScrollView>
+                    <View style={styles.group_list}>
                         <View style={styles.view_imp}>
                             <TouchableOpacity style={styles.btnImp}>
-                                <Image style={styles.img_avt} source={require('../assets/Avatar.png')}/>
-                                <View style={styles.view_avt}>
-                                <Text style={{fontWeight:500}}>
-                                    Avatar  
-                                    {/* su dung api de load ten */}
-                                </Text>
-                                <Text style={{color:'grey' , fontWeight:500 , marginTop:1}}>
-                                    Xem trang cá nhân 
-                                </Text>
+                            <PropertySafetyOutlined style={{marginTop:5 , fontSize:30,color:'#129EFD'}} />
+                                <View style={{marginLeft:15}}>
+                                <Text style={{fontWeight:500 , fontSize:18,marginTop:5}}>Tài khoản và bảo mật</Text>
+                                
                                 </View>
-                                <TouchableOpacity>
-                                     <UserSwitchOutlined style={{fontSize:'30px' , color:'#157ef9'}}/>
-                                </TouchableOpacity>
+                                <RightOutlined  style={{marginLeft:115 , marginTop:15}}/>
                             </TouchableOpacity>
+                            <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Quyền riêng tư</Text>
+                                <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
                         </View>
 
                         <View style={styles.view_song}>
@@ -57,6 +60,7 @@ import { AntDesign} from '@expo/vector-icons';
                                 <Text style={{color:'grey' , fontWeight:500}}>Đăng ký nhạc chờ , thể hiện cá tính</Text>
                                 </View>
                             </TouchableOpacity>
+                            
                         </View>
 
                         <View style={styles.view_qr}>
@@ -68,6 +72,7 @@ import { AntDesign} from '@expo/vector-icons';
                                 <Text style={{color:'grey' , fontWeight:500}}>Lưu trữ và xuất trình các tin nhắn quan trọng</Text>
                                 </View>
                             </TouchableOpacity>
+                            
                         </View>
 
                         <View style={styles.view_mid}>
@@ -97,19 +102,68 @@ import { AntDesign} from '@expo/vector-icons';
                         <View style={styles.vew_scu}>
                             <TouchableOpacity style={styles.btn_scu}>
                                 <Image style={styles.iconsearch} source={require('../assets/icon_sec.png')}/>
-                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Tài khoản bảo mật</Text>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Thông báo</Text>
                                 <RightOutlined  style={{marginLeft:138 , marginTop:15}}/>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.view_qrt}>
                             <TouchableOpacity style={styles.btn_qrt}>
                             <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
-                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Quyền riêng tư</Text>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Tin nhắn</Text>
                                 <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
                             </TouchableOpacity>
                         </View>
+                        <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Cuộc gọi</Text>
+                                <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Nhật ký</Text>
+                                <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Danh bạ</Text>
+                                <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Giao diện và ngôn ngữ</Text>
+                                <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
+
+                        </View>
+
+                        <View>
+                        <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Thông tin về Zalo</Text>
+                                <RightOutlined  style={{marginLeft:130 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.view_qrt}>
+                            <TouchableOpacity style={styles.btn_qrt}>
+                            <LockOutlined style={{fontSize:'30px',color:'#129EFD',marginTop:5}}/>
+                                <Text  style={ {fontWeight:500 , fontSize:18 , marginLeft:15}}>Liên hệ hổ trợ</Text>
+                                <RightOutlined  style={{marginLeft:165 , marginTop:15}}/>
+                            </TouchableOpacity>
+                        </View>
+
                         </View>
                     </View>
+
+                    </ScrollView>
                
                     <View
         style={{
@@ -212,6 +266,8 @@ import { AntDesign} from '@expo/vector-icons';
     btnImp :{   
         flexDirection:'row',
         padding:'15px',
+        borderBottomColor:'grey',
+        borderBottomWidth:'1px',
     },
     view_avt:{
         marginLeft:10,
@@ -287,4 +343,4 @@ import { AntDesign} from '@expo/vector-icons';
         padding:'15px',
     }
    });
-   export default information ;
+   export default Settings ;

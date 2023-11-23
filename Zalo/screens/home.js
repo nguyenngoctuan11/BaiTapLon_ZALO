@@ -1,83 +1,36 @@
-/* màn hình 1  bao gồm : đăng nhập , đăng ký , quên mật khẩu*/
-import * as React from 'react' ;
-import { 
-    SafeAreaView,
-    View,
-    Text,
-    Image,
-    TouchableOpacity,
-    StyleSheet,
-    FlatList,
-   } from 'react-native';
+import { View, Text, TouchableOpacity } from "react-native";
+import styles from "../styles";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
-   const home = ({navigation})=>{
-        return(
-            <SafeAreaView style={styles.container}>
-                <View>
-                    <Text style={styles.text}>Zalo</Text>
-                </View>
-                <View style={styles.ses}>
-                    <TouchableOpacity style={styles.btnDangNhap}
-                        onPress={() => navigation.navigate('login')}
-                    ><Text style={styles.textBtnDN}>ĐĂNG NHẬP</Text></TouchableOpacity>
-                    <TouchableOpacity  style={styles.btnDangKy}><Text style={styles.textBtnDK}>ĐĂNG KÝ</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.btnQuenMK}><Text>Quên mật khẩu</Text></TouchableOpacity>
-                </View>
-            </SafeAreaView>
-        );
-   };
-   const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "#fff",
-        flex: 1,
-        width: "100%",
-        height: "100%",
-        overflow: "hidden",
-        alignItems: "center",
-        justifyContent:"center",
-        // justifyContent: "center",
-      },
-    text:{
-        fontSize:80,
-        color:"#26CAE1",
-    },
-    btnDangNhap:{
-        width:232,
-        height:64,
-        backgroundColor:'#5CE1FE',
-        justifyContent:'center',
-        alignItems:'center',
-        borderRadius:'20px',
-        marginBottom:"20px",
+const Home = (props) => {
+  var navigation = useNavigation();
+  return (
+    <View style={styles.container1}>
+      <View style={styles.header}>
+        <Text style={styles.text}>Zalo</Text>
+      </View>
+      <View style={styles.section}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => props.navigation.navigate("Login")}
+        >
+          <Text style={styles.text_login}> Đăng nhập</Text>
+        </TouchableOpacity>
 
-    },
-    btnDangKy:{
-        width:232,
-        height:64,
-        backgroundColor:'#C9C9C9',
-        justifyContent:'center',
-        alignItems:'center',
-        borderRadius:'20px',
-    },
-    btnQuenMK:{
-        justifyContent:'center',
-        alignContent:'center',
-        marginLeft:'65px',
-        marginTop:'10px',
-    },
-    textBtnDN:{
-        color:'#fff',
-        fontSize:'20px',
-        fontWeight:'bold',
-    },
-    textBtnDK:{
-        color:'black',
-        fontSize:'20px',
-        fontWeight:'bold',
-    },
-    ses:{
-        justifyContent:'center',
-        alignContent:'center',
-    }
-   });
-   export default home ;
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => props.navigation.navigate("Register")}
+        >
+          <Text style={styles.text_register}>Đăng ký</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.footer}>
+        <TouchableOpacity>
+          <Text style={styles.link_forget}>Quên mật khẩu ?</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+export default Home

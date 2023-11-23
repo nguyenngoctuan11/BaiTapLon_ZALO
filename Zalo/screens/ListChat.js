@@ -14,7 +14,9 @@ import { TextInput } from 'react-native-paper';
           <MessageOutlined style={{color:"#b0a7a7",fontSize:25}}/>
           import {MessageOutlined,UserOutlined ,
              IdcardOutlined,SearchOutlined,SettingOutlined,UserAddOutlined,
-             AppstoreOutlined,ClockCircleOutlined,ContactsOutlined,UsergroupAddOutlined, GroupOutlined,PhoneOutlined,VideoCameraOutlined} from '@ant-design/icons';
+             AppstoreOutlined,ClockCircleOutlined,ContactsOutlined,UsergroupAddOutlined, 
+             GroupOutlined,PhoneOutlined,VideoCameraOutlined,
+            CloudOutlined} from '@ant-design/icons';
 
 
            
@@ -51,6 +53,31 @@ import { TextInput } from 'react-native-paper';
                 backgroundColor:'grey',
             }}>
            <View style={{ flex: 8, borderBottomColor: "gray" }}>
+           <View>
+              <TouchableOpacity  style={{ backgroundColor: "#ffff" }}>
+                    <View style={{
+                      flexDirection:'row',
+                    }}>
+                        <View style={{
+                          width:40,
+                          height:40,
+                          borderRadius:'50px',
+                          backgroundColor:'#129EFD',
+                          justifyContent:'center',
+                          alignItems:'center',
+                          padding:10,
+                          marginLeft:10,
+                          marginTop:5,
+                          borderBottomColor: "#ededee",
+                          borderBottomWidth: "0.5px",
+                        }}><CloudOutlined style={{color:'white'}}/></View>
+                        <View style={{marginLeft:18, marginTop:5}}>
+                        <Text style={{fontSize:16, fontWeight:500}}>Cloud của tôi</Text>
+                        <Text>Show any one</Text>
+                        </View>
+                    </View>
+              </TouchableOpacity>
+           </View>
           {data.map((item) => {
             return (
               <TouchableOpacity style={{ backgroundColor: "#ffff" }} onPress ={()=>{
